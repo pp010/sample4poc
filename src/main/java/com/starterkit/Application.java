@@ -5,6 +5,7 @@ package com.starterkit;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 /**
  * This is a Spring boot application class which implements a CommandLineRunner.
  * This class will create and load all the required beans during runtime
@@ -13,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  */
 @SpringBootApplication
+@EnableDiscoveryClient
 public class Application implements CommandLineRunner {
 	/**
 	 * Loading all the required beans for this demo application

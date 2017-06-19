@@ -1,0 +1,10 @@
+---
+applications:
+- name: sample4poc
+  memory: 512M
+  instances: 1
+  path: ./sample4poc-1.jar
+  services:
+    - msCircuitBreaker
+    - msConfigServer
+    - msServiceRegistry

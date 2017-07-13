@@ -2,10 +2,15 @@
  * 
  */
 package com.starterkit;
-import org.springframework.boot.CommandLineRunner;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
+
 /**
  * This is a Spring boot application class which implements a CommandLineRunner.
  * This class will create and load all the required beans during runtime
@@ -15,7 +20,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class Application implements CommandLineRunner {
+@EnableCircuitBreaker
+public class Application {
 	/**
 	 * Loading all the required beans for this demo application
 	 * 
@@ -24,12 +30,10 @@ public class Application implements CommandLineRunner {
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(new Object[] { Application.class }, args);
 	}
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.springframework.boot.CommandLineRunner#run(java.lang.String[])
-	 */
-	@Override
-	public void run(String... args) throws Exception {
+
+	@Bean
+	@LoadBalanced
+	RestTemplate rest() {
+		return new RestTemplate();
 	}
 }

@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.starterkit</groupId>
-	<artifactId>mservice</artifactId>
+	<artifactId>sample4poc</artifactId>
 	<version>1</version>
 	<packaging>jar</packaging>
 	<name>Springrest</name>
@@ -89,9 +89,12 @@
 		</dependency>
 		<dependency>
 			<groupId>io.pivotal.spring.cloud</groupId>
+			<artifactId>spring-cloud-services-starter-circuit-breaker</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.pivotal.spring.cloud</groupId>
 			<artifactId>spring-cloud-services-starter-service-registry</artifactId>
 		</dependency>
-
 
 	</dependencies>
 

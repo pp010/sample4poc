@@ -1,11 +1,8 @@
 ---
 applications:
-- name: mservice
+- name: sample4poc
   memory: 1G
   instances: 1
-  path: ./mservice-1.jar
+  path: ./target/sample4poc-0.0.1-SNAPSHOT.jar
   services:
-  - msConfigServer
-  - msServiceRegistry
-  env:
-    SPRING_PROFILES_ACTIVE: DEV
+  - mcb
